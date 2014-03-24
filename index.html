@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+    <script src="js/controlador.js"></script>
+  </head>
+  <body>
+    <h2>Puntajes</h2>
+    <div ng-controller="PuntajeCtrl">
+      <ul class="unstyled">
+        <li ng-repeat="puntaje in puntajes">
+          <span>{{puntaje.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addPuntaje()">
+        <lable>Puntaje: </lable>
+        <input type="number" ng-model="puntajeText" 
+               placeholder="¿Cual fue tu puntaje?">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html>
